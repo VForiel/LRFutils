@@ -19,23 +19,28 @@ class progress():
         self.decimals = decimals
         self.lastProgress = 0
         self.lastUpdate = None
+        self.lastETA = "-"
         self.start_at = time()
         self.duration = duration
 
     def update_eta(self, progress):
+        if self.lastUpdate is not None and time()-self.lastUpdate < 1: return self.lastETA
+
         progression = progress - self.lastProgress
         left = (self.max-progress)
 
         if progression == 0 or self.lastUpdate is None:
             self.lastUpdate = time()
             self.lastProgress = progress
-            return "-"
+            self.lastETA = "-"
+            return self.lastETA
 
         seconds = left/progression * (time() - self.lastUpdate)
         self.lastUpdate = time()
         self.lastProgress = progress
-        if seconds < 0: return "-"
-        return str(datetime.timedelta(seconds=seconds)).split(".")[0]
+        if seconds < 0: self.lastETA = "-"
+        else: self.lastETA = str(datetime.timedelta(seconds=seconds)).split(".")[0]
+        return self.lastETA
 
     def __call__(self, progress: float, stop=False):
 
@@ -43,7 +48,7 @@ class progress():
         if progress == self.max : stop = True
         color = Color.Yellow if stop and progress_normed != 1 else Color.LightGreen 
 
-        if stop: end = Color.NC + "          \n"
+        if stop: end = Color.NC + "\n"
         else:    end = "\r"
 
         percent  = f" {color}{round(progress_normed*100,self.decimals)                                        if self.decimals > 0 else int(progress_normed*100)}%"
