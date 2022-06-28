@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="LRFutils",
-    version = "0.0.5",
+    version = "0.0.6",
     description = 'Just a custom library to share with some colleagues. Use it at your own risks.',
     author = 'ZRunner',
     author_email = 'vince.lrf@gmail.com',
