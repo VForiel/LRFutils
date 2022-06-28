@@ -1,6 +1,6 @@
 from math import ceil
 import os
-from color import Color
+from src.LRFutils.color import Color
 from time import time
 import datetime
 import re
