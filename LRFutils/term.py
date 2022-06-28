@@ -7,6 +7,3 @@ except: term_size = 80
 
 def hline(motif):
     return motif * int(term_size / len(motif))
-
-
-print(hline("yolo "))

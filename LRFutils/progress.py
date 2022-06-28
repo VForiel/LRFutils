@@ -34,13 +34,15 @@ class bar():
         else: self.lastETA = str(datetime.timedelta(seconds=seconds)).split(".")[0]
         return self.lastETA
 
-    def __call__(self, progress: float, stop=False):
+    def __call__(self, progress: float, prefix=None, stop=False):
+        if prefix is None: prefix = self.prefix
+        else: prefix = str(prefix)
 
         progress_normed = progress / self.max
         if progress == self.max : stop = True
         color = Color.Yellow if stop and progress_normed != 1 else Color.LightGreen 
 
-        if stop: end = Color.NC + "\n"
+        if stop: end = "\n"
         else:    end = "\r"
 
         if type(progress) == float: progress = round(progress, self.decimals)
@@ -49,7 +51,7 @@ class bar():
         eta      = f" {Color.NC}eta {Color.Blue}{self.update_eta(progress)}"                                  if not stop else ''
         duration = f" {Color.Purple}{str(datetime.timedelta(seconds=time() - self.start_at)).split('.')[0]}"  if self.duration else ''
 
-        prefix  = '' if self.prefix == '' else Color.NC + self.prefix + ' '
+        prefix  = '' if prefix == '' else Color.NC + prefix + ' '
         suffix  = f"{percent}{frac}{duration}{eta}"
 
         barwidth = self.width - len(Color.clear(suffix)) - len(Color.clear(prefix))
@@ -63,7 +65,7 @@ class bar():
         elif currentBar == minBar: bar = color + '━' * currentBar       + Color.White      + '╺' + Color.White + '━' * (barwidth - currentBar - 1)
         else:                      bar = color + '━' * (currentBar - 1) + color + '╸' + Color.White + '━' * (barwidth - currentBar)
 
-        msg = f"{prefix}{bar}{suffix}"
+        msg = f"{prefix}{bar}{suffix}{Color.NC}"
         print(msg, end=end)
 
     def stop(self):
