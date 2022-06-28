@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
-    name='LRF utils',
+    name='LRFutils',
     url='https://github.com/LeiRoF/Utils',
     author='Vincent Foriel',
     author_email='vince.lrf@gmail.com',
