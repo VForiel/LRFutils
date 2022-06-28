@@ -7,7 +7,7 @@ setup(
     author='Vincent Foriel',
     author_email='vince.lrf@gmail.com',
     install_requires=['numpy'],
-    version='0.1',
+    version='0.2',
     description="Just a custom library to share with some colleagues.",
     long_description=open('README.md').read(),
 )
