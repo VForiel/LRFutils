@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'LRFutils'
-copyright = '2022, Vincent Forie'
-author = 'Vincent Forie'
+copyright = '2022, Vincent Foriel'
+author = 'Vincent Foriel'
 
 
 # -- General configuration ---------------------------------------------------
