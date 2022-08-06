@@ -2,7 +2,7 @@ from .color import Color
 from time import time
 import datetime
 
-class bar():
+class Bar():
     def __init__(self, max = 1, width = 80, prefix = "", eta = True, decimals = 0, duration = True):
         self.max = max
         self.width = width if type(width) == int else 80
