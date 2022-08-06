@@ -11,10 +11,16 @@ This lib is a set of tools that I maintain firstly for my, secondly for my colle
 I don't guaranty any kind of performance, stability, etc. use it at your own risks ^^
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 0
+   :caption: Info
 
-   archive.md
-   color.md
-   progress.md
-   term.md
+   getting_started
+
+.. toctree::
+   :maxdepth: 0
+   :caption: Modules
+
+   archive
+   color
+   progress
+   term
