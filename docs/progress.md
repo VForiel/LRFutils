@@ -67,7 +67,7 @@ progress.Bar(max = 1, width = 80, prefix = "", eta = True, decimals = 0, duratio
 ### Updater
 Update the bar (print it in the terminal)
 ```python
-myBar(self, progress: float, prefix=None, stop=False)
+myBar(progress: float, prefix=None, stop=False)
 ```
 
 **Parameters:**
