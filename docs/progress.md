@@ -78,7 +78,7 @@ myBar(progress: float, prefix=None, stop=False)
 
 **Return types:** None
 
-# Force stop
+### Force stop
 
 Update and stop the bar by putting it in an incomplet mode.
 
