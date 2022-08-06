@@ -83,7 +83,7 @@ myBar(self, progress: float, prefix=None, stop=False)
 Update and stop the bar by putting it in an incomplet mode.
 
 ```python
-myBar.stop()
+stop()
 ```
 
 > Once a bar is stopped, the line cannot be overwritten, so it cannot be updated anymore. If you update the bar, it will display a new bar.
