@@ -1,5 +1,9 @@
 from setuptools import setup
 
+requirements = []
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     name="LRFutils",
     version = "0.0.8",
@@ -8,17 +12,7 @@ setup(
     author_email = 'vince.lrf@gmail.com',
     url = 'https://github.com/LeiRoF/Utils',
     packages=['LRFutils'],
-    install_requires=[
-        'gitpython',
-        'numpy',
-        'matplotlib',
-        'scipy',
-        'regex',
-        'platform',
-        'sys',
-        'traceback',
-        'datetime'
-        ],
+    install_requires=requirements,
     python_requires='>=3.9.0',
     classifiers=[
         "Programming Language :: Python :: 3",
