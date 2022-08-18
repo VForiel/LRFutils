@@ -2,9 +2,9 @@ from setuptools import setup
 
 setup(
     name="LRFutils",
-    version = "0.0.7",
+    version = "0.0.8",
     description = 'Just a custom library to share with some colleagues. Use it at your own risks.',
-    author = 'ZRunner',
+    author = 'Leirof',
     author_email = 'vince.lrf@gmail.com',
     url = 'https://github.com/LeiRoF/Utils',
     packages=['LRFutils'],
@@ -13,7 +13,11 @@ setup(
         'numpy',
         'matplotlib',
         'scipy',
-        'regex'
+        'regex',
+        'platform',
+        'sys',
+        'traceback',
+        'datetime'
         ],
     python_requires='>=3.9.0',
     classifiers=[
