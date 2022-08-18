@@ -1,0 +1,9 @@
+ENVIRONMENT: uname_result(system='Windows', node='Vince_MateBook', release='10', version='10.0.22622', machine='AMD64')
+
+18/08/2022 at 16:28:59 | [INFO] Hello world!
+18/08/2022 at 16:28:59 | [WARNING] Hello world!
+18/08/2022 at 16:28:59 | [ERROR] Hello world!
+18/08/2022 at 16:28:59 | Full traceback below.
+
+NoneType: None
+
