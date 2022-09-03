@@ -67,4 +67,5 @@ def error(message, etype = None, value = None, tb=None):
 def myexcepthook(etype, value, tb):
     error(f"🤕 Uh, there is an unexpected error somewhere: {value} ({type})", etype=etype, value=value, tb=tb)
 
-sys.excepthook = myexcepthook
+def hide_traceback():
+    sys.excepthook = myexcepthook
