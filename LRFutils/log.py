@@ -8,6 +8,8 @@ from LRFutils.color import Color
 import sys
 import traceback
 
+hide_traceback = False
+
 # Get current time as string
 def now(human=False, color=False):
     time = str(datetime.now())
@@ -65,7 +67,8 @@ def error(message, etype = None, value = None, tb=None):
 
 # Catch unexpected crashes
 def myexcepthook(etype, value, tb):
+    global hide_traceback
     error(f"🤕 Uh, there is an unexpected error somewhere: {value} ({type})", etype=etype, value=value, tb=tb)
+    if not hide_traceback: sys.__excepthook__(etype, value, tb)
 
-def hide_traceback():
-    sys.excepthook = myexcepthook
+sys.excepthook = myexcepthook
