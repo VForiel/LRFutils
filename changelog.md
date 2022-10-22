@@ -1,3 +1,11 @@
+# 0.0.12
+
+## 🩹 Fixes
+- Fixed `LRFutils.archive.new()` without name leanding to "None" in the archive name.
+
+## 🔧 Tweaks
+- Now, if any other parameter than `name` or `verbose` is given to the `LRFutils.archive.ew()` function, this parameter will be added to the name using `LRFutils.archive.description()` method.
+
 # 0.0.11
 
 > **Warning**
