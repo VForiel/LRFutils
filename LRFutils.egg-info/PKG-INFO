@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: LRFutils
+Version: 0.0.11
+Summary: Just a custom library to share with some colleagues. Use it at your own risks.
+Home-page: https://github.com/LeiRoF/Utils
+Author: Leirof
+Author-email: vince.lrf@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.10.0
+License-File: LICENSE

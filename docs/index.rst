@@ -22,5 +22,6 @@ I don't guaranty any kind of performance, stability, etc. use it at your own ris
 
    archive
    color
+   logs
    progress
    term

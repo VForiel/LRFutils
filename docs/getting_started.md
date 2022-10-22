@@ -6,7 +6,7 @@ This project require python 3.10 or upper
 
 1. Install the package
 ```
-pip install git+https://github.com/LeiRoF/LRFutils
+pip install LRFutils
 ```
 
 2. That's it! There is no second step!
