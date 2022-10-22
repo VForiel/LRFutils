@@ -4,3 +4,6 @@ _static/
 _templates/
 logs/
 archives/
+build/
+dist/
+*.egg-info/
