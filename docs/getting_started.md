@@ -9,10 +9,8 @@ This project require python 3.10 or upper
 pip install LRFutils
 ```
 
-2. That's it! There is no second step!
-
-You can now import the modules in your code
+2. Import the modules you want in your code:
 
 ```python
-from LRFutils import *
+from LRFutils import archive, color, logs, progress, term
 ```
