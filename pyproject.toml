@@ -1,0 +1,26 @@
+[build-system]
+requires = [
+            "setuptools>=61.0",
+            "gitpython",
+            "regex"
+        ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LRFutils"
+version = "0.0.15"
+authors = [
+  { name="Leirof", email="vince.lrf@gmail.com" },
+]
+description = "Just a custom library to share with some colleagues. Use it at your own risks."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/LeiRoF/LRFutils"
+"Bug Tracker" = "https://github.com/LeiRoF/LRFutils/issues"

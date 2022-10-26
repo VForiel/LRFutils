@@ -6,7 +6,19 @@ if os.path.isdir("dist"):
         os.remove("dist/" + file)
 
 # Build and send package
-os.system("python3 -m pip install --upgrade build")
-os.system("python3 -m build -s")
-os.system("python3 -m pip install --upgrade twine")
-os.system("python3 -m twine upload dist/*")
+
+script = [
+    "python3 -m pip install --upgrade build",
+    "python3 -m build",
+    "python3 -m pip install --upgrade twine",
+    "python3 -m twine upload dist/*"
+]
+
+accept = ["", "yes", "y", "ye", "yeah", "yep", "oui", "ouai", "ouaip"]
+
+for command in script:
+    select = input(f"Do you want to execute the following command? [Y/n]\n{command}\n")
+    if select.lower() in accept:
+        os.system(command)
+    else:
+        exit(0)
