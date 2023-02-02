@@ -5,3 +5,6 @@ _templates/
 logs/
 venv/
 archives/
+build/
+dist/
+*.egg-info/

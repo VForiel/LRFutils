@@ -15,8 +15,11 @@ def next_number(path):
     number = max_num + 1
     return number
 
-def new(name = None):
+def new(name = None, verbose=False, **kwargs):
     global number
+
+    if kwargs:
+        name = name + "-" + description(**kwargs)
 
     timestamp = str(datetime.datetime.now()).split(" ")
 
@@ -33,11 +36,16 @@ def new(name = None):
     else: number = 1
 
     if name is not None: name = "_" + name
+    else: name = ""
 
     if not os.path.isdir(f"{path}/{number}{name}"): os.makedirs(f"{path}/{number}{name}")
 
+    archive_name = f"{path}/{number}{name}"
 
-    return f"{path}/{number}{name}"
+    if verbose:
+        print(f"Archive created at {archive_name}")
+
+    return archive_name
 
 def description(**kwargs):
     desc = ""
