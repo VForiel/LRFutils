@@ -1,6 +1,6 @@
 from setuptools import setup
 
-requirements = []
+requirements = ["gitpython"]
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
@@ -13,7 +13,7 @@ setup(
     url = 'https://github.com/LeiRoF/Utils',
     packages=['LRFutils'],
     install_requires=requirements,
-    python_requires='>=3.9.0',
+    python_requires='>=3.7.0',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

@@ -15,6 +15,7 @@ I don't guaranty any kind of performance, stability, etc. use it at your own ris
    :caption: Info
 
    getting_started
+   changelog
 
 .. toctree::
    :maxdepth: 0
@@ -22,5 +23,6 @@ I don't guaranty any kind of performance, stability, etc. use it at your own ris
 
    archive
    color
+   logs
    progress
    term

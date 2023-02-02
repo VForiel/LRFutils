@@ -1,54 +1,67 @@
 import re
 
-class Color:
-    NC          = '\033[0m'  # No Color, reset all
+def clear(text):
+    txt = re.sub("\033\[[0-9][0-9]?m", "", text)
+    txt = re.sub("\\u001b\[[0-9][0-9]?m", "", text)
+    txt = re.sub("\\u001b\[[0-9][0-9]?;1m", "", text)
+    return txt
 
-    Bold        = '\033[1m'
-    Underlined  = '\033[4m'
-    Blink       = '\033[5m'
-    Inverted    = '\033[7m'
-    Hidden      = '\033[8m'
+def black(text): return '\033[30m' + text + '\033[0m'
+def red(text): return '\033[31m' + text + '\033[0m'
+def green(text): return '\033[32m' + text + '\033[0m'
+def yellow(text): return '\033[33m' + text + '\033[0m'
+def blue(text): return '\033[34m' + text + '\033[0m'
+def purple(text): return '\033[35m' + text + '\033[0m'
+def cyan(text): return '\033[36m' + text + '\033[0m'
+def lightgrey(text): return '\033[37m' + text + '\033[0m'
+def darkgrey(text): return '\033[90m' + text + '\033[0m'
+def lightred(text): return '\033[91m' + text + '\033[0m'
+def lightgreen(text): return '\033[92m' + text + '\033[0m'
+def yellow(text): return '\033[93m' + text + '\033[0m'
+def lightblue(text): return '\033[94m' + text + '\033[0m'
+def pink(text): return '\033[95m' + text + '\033[0m'
+def lightcyan(text): return '\033[96m' + text + '\033[0m'
 
-    Black       = '\033[30m'
-    Red         = '\033[31m'
-    Green       = '\033[32m'
-    Yellow      = '\033[33m'
-    Blue        = '\033[34m'
-    Purple      = '\033[35m'
-    Cyan        = '\033[36m'
-    LightGray   = '\033[37m'
-    
-    Gray         = "\u001b[30;1m"
-    LightRed     = "\u001b[31;1m"
-    LightGreen   = "\u001b[32;1m"
-    LightYellow  = "\u001b[33;1m"
-    LightBlue    = "\u001b[34;1m"
-    LightMagenta = "\u001b[35;1m"
-    LightCyan    = "\u001b[36;1m"
-    White        = "\u001b[37;1m"
+def bold(text): return '\033[01m' + text + '\033[0m'
+def disable(text): return '\033[02m' + text + '\033[0m'
+def underline(text): return '\033[04m' + text + '\033[0m'
+def reverse(text): return '\033[07m' + text + '\033[0m'
+def strikethrough(text): return '\033[09m' + text + '\033[0m'
+def invisible(text): return '\033[08m' + text + '\033[0m'
 
-    
-    on_Black     = "\u001b[40m"
-    on_Red       = "\u001b[41m"
-    on_Green     = "\u001b[42m"
-    on_Yellow    = "\u001b[43m"
-    on_Blue      = "\u001b[44m"
-    on_Magenta   = "\u001b[45m"
-    on_Cyan      = "\u001b[46m"
-    on_LightGray = "\u001b[47m"
+def on_black(text): return '\033[40m' + text + '\033[0m'
+def on_red(text): return '\033[41m' + text + '\033[0m'
+def on_green(text): return '\033[42m' + text + '\033[0m'
+def on_yellow(text): return '\033[43m' + text + '\033[0m'
+def on_blue(text): return '\033[44m' + text + '\033[0m'
+def on_purple(text): return '\033[45m' + text + '\033[0m'
+def on_cyan(text): return '\033[46m' + text + '\033[0m'
+def on_lightgrey(text): return '\033[47m' + text + '\033[0m'
 
+stop = '\033[0m'
+class fg:
+    black = '\033[30m'
+    red = '\033[31m'
+    green = '\033[32m'
+    orange = '\033[33m'
+    blue = '\033[34m'
+    purple = '\033[35m'
+    cyan = '\033[36m'
+    lightgrey = '\033[37m'
+    darkgrey = '\033[90m'
+    lightred = '\033[91m'
+    lightgreen = '\033[92m'
+    yellow = '\033[93m'
+    lightblue = '\033[94m'
+    pink = '\033[95m'
+    lightcyan = '\033[96m'
 
-    on_Gray         = "\u001b[40;1m"
-    on_LightRed     = "\u001b[41;1m"
-    on_LightGreen   = "\u001b[42;1m"
-    on_LightYellow  = "\u001b[43;1m"
-    on_LightBlue    = "\u001b[44;1m"
-    on_LightMagenta = "\u001b[45;1m"
-    on_LightCyan    = "\u001b[46;1m"
-    on_White        = "\u001b[47;1m"
-
-    def clear(txt):
-        txt = re.sub("\033\[[0-9][0-9]?m", "", txt)
-        txt = re.sub("\\u001b\[[0-9][0-9]?m", "", txt)
-        txt = re.sub("\\u001b\[[0-9][0-9]?;1m", "", txt)
-        return txt
+class bg:
+    black = '\033[40m'
+    red = '\033[41m'
+    green = '\033[42m'
+    orange = '\033[43m'
+    blue = '\033[44m'
+    purple = '\033[45m'
+    cyan = '\033[46m'
+    lightgrey = '\033[47m'
