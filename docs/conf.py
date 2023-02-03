@@ -58,6 +58,7 @@ html_theme_options = {
     "path_to_docs": "docs",
     "use_repository_button": True,
     "use_edit_page_button": True,
+    "announcement": "⚠️ 0.1.0 version is in active development and might be unstable, use it at your own risks ⚠️"
 }
 
 html_logo = "logo.png"

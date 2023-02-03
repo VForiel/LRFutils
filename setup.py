@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="LRFutils",
-    version = "0.0.10",
+    version = "0.1.0",
     description = 'Just a custom library to share with some colleagues. Use it at your own risks.',
     author = 'Leirof',
     author_email = 'vince.lrf@gmail.com',

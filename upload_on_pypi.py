@@ -1,4 +1,5 @@
 import os
+from LRFutils import color
 
 # Remove old versions
 if os.path.isdir("dist"):
@@ -17,7 +18,7 @@ script = [
 accept = ["", "yes", "y", "ye", "yeah", "yep", "oui", "ouai", "ouaip"]
 
 for command in script:
-    select = input(f"Do you want to execute the following command? [Y/n]\n{command}\n")
+    select = input(color.blue("\nDo you want to execute the following command? [Y/n]\n   ") + color.yellow(command) + "\n")
     if select.lower() in accept:
         os.system(command)
     else:
