@@ -1,5 +1,9 @@
 # 👋 Getting started
 
+```{warning}
+This is a personnale and young library, which is highly subject to change. If you want to use some tools from this lib, I strongly recommand you to put a strict version requirement in your `requirements.txt` file.
+``` 
+
 ## 🔌 Installation
 
 This project require python 3.7 or upper

@@ -80,18 +80,18 @@ class Bar():
 
         progress_normed = progress / self.max
         if progress == self.max : stop = True
-        color_bar = color.Yellow if stop and progress_normed != 1 else color.LightGreen 
+        color_bar = color.fg.yellow if stop and progress_normed != 1 else color.fg.lightgreen 
 
         if stop: end = "\n"
         else:    end = "\r"
 
         if type(progress) == float: progress = round(progress, self.decimals)
         percent  = f" {color_bar}{round(progress_normed*100,self.decimals)                                        if self.decimals > 0 else int(progress_normed*100)}%"
-        frac     = f" {color.LightRed}{progress}/{self.max}"                                                  if self.max is not None else ''
-        eta      = f" {color.NC}eta {color.Blue}{self.update_eta(progress)}"                                  if not stop else ''
-        duration = f" {color.Purple}{str(datetime.timedelta(seconds=time() - self.start_at)).split('.')[0]}"  if self.duration else ''
+        frac     = f" {color.fg.lightred}{progress}/{self.max}"                                                  if self.max is not None else ''
+        eta      = f" {color.stop}eta {color.fg.blue}{self.update_eta(progress)}"                                  if not stop else ''
+        duration = f" {color.fg.purple}{str(datetime.timedelta(seconds=time() - self.start_at)).split('.')[0]}"  if self.duration else ''
 
-        prefix  = '' if prefix == '' else color.NC + prefix + ' '
+        prefix  = '' if prefix == '' else color.stop + prefix + ' '
         suffix  = f"{percent}{frac}{duration}{eta}"
 
         barwidth = self.width - len(color.clear(suffix)) - len(color.clear(prefix))
@@ -100,12 +100,12 @@ class Bar():
         currentBar = int(round(min(progress_normed*barwidth,barwidth)))
         minBar     = int(min(progress_normed*barwidth,barwidth))
 
-        if progress_normed == 0:   bar = color.White      + '━' * barwidth
-        elif progress_normed == 1: bar = color.LightGreen + '━' * barwidth
-        elif currentBar == minBar: bar = color_bar + '━' * currentBar       + color.White      + '╺' + color.White + '━' * (barwidth - currentBar - 1)
-        else:                      bar = color_bar + '━' * (currentBar - 1) + color_bar + '╸' + color.White + '━' * (barwidth - currentBar)
+        if progress_normed == 0:   bar = color.fg.lightgrey      + '━' * barwidth
+        elif progress_normed == 1: bar = color.fg.lightgreen + '━' * barwidth
+        elif currentBar == minBar: bar = color_bar + '━' * currentBar       + color.fg.lightgrey      + '╺' + color.fg.lightgrey  + '━' * (barwidth - currentBar - 1)
+        else:                      bar = color_bar + '━' * (currentBar - 1) + color_bar + '╸' + color.fg.lightgrey  + '━' * (barwidth - currentBar)
 
-        msg = f"{prefix}{bar}{suffix}{color.NC}"
+        msg = f"{prefix}{bar}{suffix}{color.stop}"
         print(msg, end=end)
 
 
