@@ -1,5 +1,13 @@
 # 📜 Changelog
 
+## 0.1.2
+
+### progress
+
+#### 🐛 Bug fixes
+
+- The Bar initialization was using a pipe in type hints which is not supported in python before 3.10. This is now fixed.
+
 
 ## 0.1.0
 ---
