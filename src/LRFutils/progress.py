@@ -1,6 +1,7 @@
 from . import color
 from time import time
 import datetime
+from typing import Union
 
 class Bar():
 
@@ -9,7 +10,7 @@ class Bar():
     # ________________________________________________________________________________
     # Create a progress bar
 
-    def __init__(self, max:float|int = 1, width:int = 80, prefix:str = "", eta:bool = True,  decimals:int = 0, show_duration:bool = True, average_ETA:int = 10):
+    def __init__(self, max:Union[float,int] = 1, width:int = 80, prefix:str = "", eta:bool = True,  decimals:int = 0, show_duration:bool = True, average_ETA:int = 10):
         self.max = max
         self.width = width if isinstance(width,int) else 80
         self.prefix = prefix
