@@ -24,6 +24,14 @@ class fg:
     lightblue = '\033[94m'
     pink = '\033[95m'
     lightcyan = '\033[96m'
+    brightblack = '\033[30;1m'
+    brightred = '\033[31;1m'
+    brightgreen = '\033[32;1m'
+    brightyellow = '\033[33;1m'
+    brightblue = '\033[34;1m'
+    brightpurple = '\033[35;1m'
+    brightcyan = '\033[36;1m'
+    brightwhite = '\033[37;1m'
 
 def black(text): return fg.black + text + stop
 def red(text): return fg.red + text + stop
@@ -40,6 +48,14 @@ def yellow(text): return fg.yellow + text + stop
 def lightblue(text): return fg.lightblue + text + stop
 def pink(text): return fg.pink + text + stop
 def lightcyan(text): return fg.lightcyan + text + stop
+def brightblack(text): return fg.brightblack + text + stop
+def brightred(text): return fg.brightred + text + stop
+def brightgreen(text): return fg.brightgreen + text + stop
+def brightyellow(text): return fg.brightyellow + text + stop
+def brightblue(text): return fg.brightblue + text + stop
+def brightpurple(text): return fg.brightpurple + text + stop
+def brightcyan(text): return fg.brightcyan + text + stop
+def brightwhite(text): return fg.brightwhite + text + stop
 
 class bg:
     black = '\033[40m'
