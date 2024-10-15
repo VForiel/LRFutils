@@ -1,17 +1,19 @@
 [build-system]
 requires = [
-            "setuptools>=61.0",
-            "gitpython",
-            "regex"
+            "setuptools>=61.0"
         ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "LRFutils"
-version = "0.1.2"
+version = "0.1.4"
 authors = [
   { name="Leirof", email="vince.lrf@gmail.com" },
 ]
+dependencies = [
+            "gitpython",
+            "regex",
+        ]
 description = "Just a custom library to share with some colleagues. Use it at your own risks."
 readme = "README.md"
 requires-python = ">=3.7"
