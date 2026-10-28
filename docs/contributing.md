@@ -51,4 +51,4 @@ Markdown (MyST); the reference pages come from the docstrings (NumPy style, with
 ## 🚢 Releases
 
 The maintainer bumps `version` in `pyproject.toml`, completes the changelog and publishes a GitHub release: the
-`Publish` workflow uploads the package to PyPI.
+`Publish` workflow uploads the package to PyPI (secret `PYPI_API_TOKEN`).

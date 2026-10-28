@@ -37,7 +37,7 @@ python -m venv .venv
 .venv/Scripts/python -m sphinx -W -b html docs docs/_build/html
 ```
 
-A GitHub release publishes the package on PyPI by trusted publishing (`.github/workflows/publish.yml`); Read the Docs builds the documentation
+A GitHub release publishes the package on PyPI (`.github/workflows/publish.yml`); Read the Docs builds the documentation
 of every push to `main`.
 
 MIT license.
