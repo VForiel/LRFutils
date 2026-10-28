@@ -1,6 +1,6 @@
-# Terminal helpers
+# 🖥️ Terminal helpers
 
-## Progress bars
+## ⏳ Progress bars
 
 ```python
 from LRFutils import progress
@@ -15,7 +15,7 @@ The bar shows the percentage, `i/max`, the elapsed time and an estimated time of
 `average_ETA` updates (10 by default). `bar(i, stop=True)` or `bar.stop()` ends it early (in yellow). Options:
 `width` (80 characters), `decimals` of the percentage, `eta` and `show_duration`.
 
-## Colours
+## 🌈 Colours
 
 ```python
 from LRFutils import color
@@ -28,7 +28,7 @@ Foreground functions: `black`, `red`, `green`, `orange`, `blue`, `purple`, `cyan
 `lightred`, `lightgreen`, `yellow`, `lightblue`, `pink`, `lightcyan`; backgrounds: `on_black`, `on_red`, … The raw codes
 are in `color.fg`, `color.bg` and the module (`bold`, `underline`, `stop`…).
 
-## Logs
+## 📝 Logs
 
 ```python
 from LRFutils import logs
@@ -41,6 +41,10 @@ logs.replace_excepthook()   # uncaught exceptions are logged too
 Messages are printed with the date and written to `logs/<start time>.log`, which begins with the machine description.
 `logs.error(message)` also records the current traceback.
 
-## Separators
+## 📏 Separators
 
 `term.hline("─")` returns a line as wide as the terminal.
+
+```{seealso}
+The reference pages {doc}`../api/progress`, {doc}`../api/logs`, {doc}`../api/color` and {doc}`../api/term`.
+```

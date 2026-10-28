@@ -4,6 +4,37 @@ import datetime
 from typing import Union
 
 class Bar():
+    """Progress bar drawn on one terminal line.
+
+    Call the bar with the current progress to redraw it: it shows the percentage, ``progress/max``, the elapsed time
+    and the estimated time of arrival (ETA), averaged over the last ``average_ETA`` updates. It turns green and ends the
+    line when ``progress`` reaches ``max``, or yellow when it is stopped early.
+
+    Parameters
+    ----------
+    max : float or int
+        Value of the progress at the end.
+    width : int
+        Width of the whole line, in characters.
+    prefix : str
+        Text shown before the bar.
+    eta : bool
+        Show the estimated time of arrival.
+    decimals : int
+        Decimals of the percentage.
+    show_duration : bool
+        Show the elapsed time.
+    average_ETA : int
+        Number of updates the ETA is averaged on.
+
+    Examples
+    --------
+    >>> from LRFutils import progress
+    >>> bar = progress.Bar(max=200, prefix="Simulation")
+    >>> for i in range(201):
+    ...     bar(i)
+    Simulation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 200/200 0:00:03
+    """
 
 
 
@@ -28,6 +59,8 @@ class Bar():
     # Compute the ETA
 
     def update_eta(self, progress):
+        """Return the estimated time of arrival for ``progress`` (``"-"`` while unknown); used by :meth:`__call__`.
+        """
 
         # Get index of the i-th revious update to average the ETA on i updates
         if len(self.previous_progress) <= self.average_ETA:
@@ -73,6 +106,23 @@ class Bar():
     # Update the progress bar
 
     def __call__(self, progress: float, prefix=None, stop=False):
+        """Redraw the bar for ``progress``.
+
+        Parameters
+        ----------
+        progress : float
+            Current progress, between 0 and ``max``.
+        prefix : str, optional
+            Replaces the prefix for this update (for instance the name of the current step).
+        stop : bool
+            End the bar on this update (new line, yellow if not complete).
+
+        Examples
+        --------
+        >>> bar = progress.Bar(max=3)
+        >>> for step in ["load", "fit", "save"]:
+        ...     bar(["load", "fit", "save"].index(step) + 1, prefix=step)
+        """
         if prefix is None: prefix = self.prefix
         else: prefix = str(prefix)
 
@@ -112,6 +162,17 @@ class Bar():
     # Stop the progress bar
 
     def stop(self):
+        """End the bar at its last progress (in yellow if not complete) and reset it.
+
+        Examples
+        --------
+        >>> bar = progress.Bar(max=100)
+        >>> for i in range(100):
+        ...     if converged(i):
+        ...         bar.stop()
+        ...         break
+        ...     bar(i)
+        """
         self(self.previous_progress[-1], stop=True)
         self.previous_progress = [0]
         self.lastUpdate = None

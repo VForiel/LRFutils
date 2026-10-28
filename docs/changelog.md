@@ -1,4 +1,4 @@
-# Changelog
+# 📜 Changelog
 
 ## 0.2.0
 
@@ -9,11 +9,12 @@ LRFutils absorbs VFSciTools, which is no longer maintained.
   with `-` (`0001-scan-x=1`, formerly `1_scan-x=1`). The `name`, `verbose` and keyword parameters are unchanged.
   New `root` and `metadata` arguments, and `archive.latest()`. GitPython is no longer needed.
 - New `LRFutils.pltedit` (formerly the `pltedit` package of VFSciTools): editable `.plt` figures and the `pltedit`
-  desktop editor. The file format is unchanged.
+  desktop editor, and `pltedit.get_metadata`. The file format is unchanged.
 - `color.clear` removes every colour code; the progress bar no longer fails on its first estimate; uncaught
   exceptions are reported with their type.
 - Python 3.10 or later; dependencies: NumPy, matplotlib, PyYAML.
-- New documentation, tests and continuous integration.
+- New documentation (guides, a reference page per module with an example for every function, contributing guide),
+  tests and continuous integration.
 
 ## 0.1.2
 

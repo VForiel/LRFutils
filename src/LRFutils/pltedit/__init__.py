@@ -18,8 +18,8 @@ Basic usage::
 The ``pltedit`` command opens a file in the desktop editor (Electron, see the documentation).
 """
 
-from ._io import load, save
+from ._io import get_metadata, load, save
 from ._style import set_style
 from ._version import __version__
 
-__all__ = ["__version__", "load", "save", "set_style"]
+__all__ = ["__version__", "get_metadata", "load", "save", "set_style"]

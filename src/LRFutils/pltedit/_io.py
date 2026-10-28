@@ -61,6 +61,14 @@ def save(fig: Union[Figure, Axes], path: Union[str, os.PathLike]) -> None:
     TypeError
         If *fig* is neither a :class:`~matplotlib.figure.Figure` nor an
         :class:`~matplotlib.axes.Axes`.
+
+    Examples
+    --------
+    >>> import matplotlib.pyplot as plt
+    >>> from LRFutils import pltedit
+    >>> fig, ax = plt.subplots()
+    >>> ax.plot([1, 2, 3], [4, 5, 6])
+    >>> pltedit.save(fig, "result.plt")
     """
     if isinstance(fig, Axes):
         fig = fig.get_figure()
@@ -127,6 +135,13 @@ def load(path: Union[str, os.PathLike]) -> Figure:
         If *path* does not exist.
     ValueError
         If *path* is not a valid ``.plt`` file.
+
+    Examples
+    --------
+    >>> from LRFutils import pltedit
+    >>> fig = pltedit.load("result.plt")
+    >>> fig.axes[0].set_title("Calibrated result")
+    >>> fig.savefig("result.pdf")
     """
     path = Path(path)
     if not path.exists():
@@ -297,6 +312,12 @@ def get_metadata(path: Union[str, os.PathLike]) -> dict:
         If *path* does not exist.
     ValueError
         If *path* is not a valid ``.plt`` file or has no metadata.
+
+    Examples
+    --------
+    >>> from LRFutils import pltedit
+    >>> pltedit.get_metadata("result.plt")["matplotlib_version"]
+    '3.10.1'
     """
     path = Path(path)
     if not path.exists():

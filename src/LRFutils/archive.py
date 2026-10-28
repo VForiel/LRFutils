@@ -111,6 +111,14 @@ def new(
     -------
     Archive
         An object that behaves like a path and exposes the metadata.
+
+    Examples
+    --------
+    >>> from LRFutils import archive
+    >>> run = archive.new("scan", wavelength_nm=1550, detector="InGaAs")
+    >>> run.path
+    PosixPath('archives/2026-10-28_1a2b3c4/0001-scan-wavelength_nm=1550-detector=InGaAs')
+    >>> (run.path / "spectrum.csv").write_text("...")
     """
     created_at = datetime.now(timezone.utc)
     git = _git_metadata()
@@ -146,12 +154,27 @@ def new(
 
 
 def description(**parameters: Any) -> str:
-    """Return the historical compact description for archive parameters."""
+    """Return the historical compact description for archive parameters.
+
+    Examples
+    --------
+    >>> from LRFutils import archive
+    >>> archive.description(exposure=2.5, dark=True, filter="H")
+    'exposure=2.5-dark=True-filter=H'
+    """
     return _description(parameters)
 
 
 def latest(root: str | os.PathLike[str] = "archives") -> Archive | None:
-    """Return the most recently modified archive, or ``None`` if empty."""
+    """Return the most recently modified archive, or ``None`` if empty.
+
+    Examples
+    --------
+    >>> from LRFutils import archive
+    >>> last = archive.latest()
+    >>> last.metadata["parameters"]
+    {'wavelength_nm': 1550, 'detector': 'InGaAs'}
+    """
     candidates = [path for path in Path(root).expanduser().glob("**/metadata.yml")]
     if not candidates:
         return None

@@ -18,6 +18,13 @@ def set_style(obj, style: str) -> Figure:
     -------
     matplotlib.figure.Figure
         A new figure recreated with the specified style.
+
+    Examples
+    --------
+    >>> from LRFutils import pltedit
+    >>> fig = pltedit.load("result.plt")
+    >>> dark = pltedit.set_style(fig, "dark_background")
+    >>> dark.savefig("result-dark.png")
     """
     if isinstance(obj, Figure):
         fig = obj

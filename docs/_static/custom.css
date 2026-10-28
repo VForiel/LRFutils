@@ -1,0 +1,49 @@
+/* Sponsor card of the secondary sidebar and button of the support page */
+.lrf-sponsor {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--bz-code-block-border-color, rgba(127, 127, 127, 0.3));
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.lrf-sponsor p {
+  margin: 0 0 0.6rem;
+}
+.lrf-sponsor-title {
+  font-weight: 600;
+}
+.lrf-sponsor-button {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  background: #bf3989;
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+.lrf-sponsor-button:hover {
+  background: #99286e;
+}
+/* Navigation cards of the home page */
+.lrf-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.lrf-cards a {
+  display: block;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--bz-code-block-border-color, rgba(127, 127, 127, 0.3));
+  border-radius: 8px;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.lrf-cards a:hover {
+  border-color: currentColor;
+}
+.lrf-cards strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}

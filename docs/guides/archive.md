@@ -1,4 +1,4 @@
-# Run archives
+# 🗃️ Run archives
 
 `archive.new` creates a directory for the results of a run and describes it in a `metadata.yml` file. It never
 copies or moves data: write your files into the directory it returns.
@@ -15,7 +15,7 @@ run = archive.new(
 (run.path / "measurement.csv").write_text("...")
 ```
 
-This creates:
+## 📁 What it creates
 
 ```text
 archives/
@@ -23,6 +23,8 @@ archives/
     └── 0001-calibration-exposure_ms=25-filter=H/
         └── metadata.yml
 ```
+
+## 🏷️ Naming
 
 - Runs of the same day and commit are numbered `0001`, `0002`… in creation order.
 - The name and the scalar parameters (`bool`, `int`, `float`, `str`) are added to the directory name, with
@@ -34,6 +36,12 @@ archives/
 The returned {class}`~LRFutils.archive.Archive` exposes `path` (a `pathlib.Path`) and `metadata`, and can be given
 directly to file-system functions (`os.fspath(run)`, `os.path.join(run, "x.txt")`).
 
+## 🔎 Finding the last run
+
 `archive.latest()` returns the most recently modified archive under a root, or `None`.
 
 Git is called through the `git` command when it is available; outside a repository, the commit and branch are `null`.
+
+```{seealso}
+{doc}`../api/archive` for every function and its parameters.
+```

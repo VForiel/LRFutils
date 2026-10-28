@@ -184,3 +184,11 @@ class TestRoundTrip:
         save(simple_figure, out)
         fig = load(out)
         plt.close(fig)
+
+
+def test_get_metadata_is_public(tmp_path):
+    fig, ax = plt.subplots()
+    ax.plot([0, 1])
+    pltedit.save(fig, tmp_path / "f.plt")
+    assert pltedit.get_metadata(tmp_path / "f.plt")["matplotlib_version"] == matplotlib.__version__
+    plt.close(fig)

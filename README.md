@@ -1,5 +1,9 @@
 # LRFutils
 
+[![PyPI](https://img.shields.io/pypi/v/LRFutils)](https://pypi.org/project/LRFutils/)
+[![Documentation](https://readthedocs.org/projects/lrfutils/badge/?version=latest)](https://lrfutils.readthedocs.io)
+[![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-bf3989)](https://github.com/sponsors/VForiel)
+
 Small tools for everyday scientific work, by Vincent Foriel.
 
 - `LRFutils.archive`: one dated directory per run, named after its parameters, with a `metadata.yml` manifest
@@ -37,3 +41,5 @@ A GitHub release publishes the package on PyPI by trusted publishing (`.github/w
 of every push to `main`.
 
 MIT license.
+
+If LRFutils helps your work, you can [sponsor its development](https://github.com/sponsors/VForiel) ❤️
