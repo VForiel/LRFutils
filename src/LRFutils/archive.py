@@ -155,7 +155,8 @@ def latest(root: str | os.PathLike[str] = "archives") -> Archive | None:
     candidates = [path for path in Path(root).expanduser().glob("**/metadata.yml")]
     if not candidates:
         return None
-    metadata_path = max(candidates, key=lambda path: path.stat().st_mtime)
+    # Archives created within the timestamp resolution of the file system: the higher number wins
+    metadata_path = max(candidates, key=lambda path: (path.stat().st_mtime, path.parent.name))
     metadata = yaml.safe_load(metadata_path.read_text(encoding="utf-8"))
     return Archive(metadata_path.parent, metadata)
 
