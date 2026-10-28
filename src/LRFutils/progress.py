@@ -52,10 +52,7 @@ class Bar():
             return self.lastETA
 
         # Compute the ETA in seconds
-        try:
-            seconds = todo / progression * (time() - self.previous_update[i])
-        except:
-            print(len(self.previous_update), i)
+        seconds = todo / progression * (time() - self.previous_update[i])
 
         # Update bar data
         self.previous_update.append(time())

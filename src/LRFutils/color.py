@@ -61,7 +61,5 @@ def on_cyan(text): return bg.cyan + text + stop
 def on_lightgrey(text): return bg.lightgrey + text + stop
 
 def clear(text):
-    text = re.sub("\033\[[0-9][0-9]?m", "", text)
-    text = re.sub("\\u001b\[[0-9][0-9]?m", "", text)
-    text = re.sub("\\u001b\[[0-9][0-9]?;1m", "", text)
-    return text
+    """Remove the ANSI color codes of ``text``."""
+    return re.sub(r"\x1b\[[0-9;]*m", "", text)

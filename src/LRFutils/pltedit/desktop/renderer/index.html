@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PltEdit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="brand-mark">P</div>
+      <div class="brand"><strong>PltEdit</strong><span id="file-name">Figure workspace</span></div>
+      <div class="actions"><button class="tonal-button" id="open-button">Open figure</button><button class="tonal-button" id="save-button" disabled>Save</button><button class="primary-button" id="export-button" disabled>Export PNG</button></div>
+    </header>
+    <main class="app-grid">
+      <aside class="sidebar"><div class="section-heading"><span>Library</span><button class="small-icon" id="up-button" title="Go to parent directory">↑</button></div><label class="field-label" for="directory-input">Location</label><div class="path-row"><input id="directory-input" /><button class="small-icon" id="browse-button" title="Choose a figure">＋</button></div><div id="file-list" class="file-list"></div><div class="sidebar-footer"><span class="status-dot"></span><span id="status">Ready</span></div></aside>
+      <section class="canvas-area"><div class="canvas-toolbar"><span id="figure-caption">No figure open</span><span id="canvas-size"></span></div><div class="preview-wrap" id="preview-wrap"><div class="empty-state"><div class="empty-icon">⌁</div><h1>Bring a figure to life</h1><p>Open a .plt archive to inspect and refine the original Matplotlib figure.</p><button class="primary-button" id="empty-open">Open a figure</button></div><img id="preview" alt="Rendered figure preview" hidden /></div></section>
+      <aside class="inspector" id="inspector"><div class="inspector-header"><div><span class="eyebrow">Inspector</span><h2>Figure settings</h2></div><span id="dirty-mark" hidden>●</span></div><div id="inspector-content" class="inspector-content"><p class="muted">Open a figure to see its editable properties.</p></div></aside>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+</html>

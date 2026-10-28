@@ -1,28 +1,48 @@
 [build-system]
-requires = [
-            "setuptools>=61.0"
-        ]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "LRFutils"
-version = "0.1.4"
-authors = [
-  { name="Leirof", email="vince.lrf@gmail.com" },
-]
-dependencies = [
-            "gitpython",
-            "regex",
-        ]
-description = "Just a custom library to share with some colleagues. Use it at your own risks."
+version = "0.2.0"
+description = "Small tools for everyday scientific work: run archives, editable matplotlib figures, terminal helpers"
 readme = "README.md"
-requires-python = ">=3.7"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Vincent Foriel", email = "vincent.foriel@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.5",
+    "numpy>=1.22",
+    "PyYAML>=6.0",
+]
+keywords = ["science", "archiving", "matplotlib", "reproducibility"]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
 ]
 
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+docs = ["sphinx>=7", "sphinx-breeze-theme>=0.13", "myst-parser>=3"]
+
+[project.scripts]
+pltedit = "LRFutils.pltedit._cli:main"
+
 [project.urls]
-"Homepage" = "https://github.com/LeiRoF/LRFutils"
-"Bug Tracker" = "https://github.com/LeiRoF/LRFutils/issues"
+Homepage = "https://github.com/VForiel/LRFutils"
+Documentation = "https://lrfutils.readthedocs.io"
+Changelog = "https://lrfutils.readthedocs.io/en/latest/changelog.html"
+Issues = "https://github.com/VForiel/LRFutils/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"LRFutils.pltedit" = ["desktop/*.js", "desktop/*.json", "desktop/*.py", "desktop/renderer/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,22 @@
+{
+  "name": "pltedit-desktop",
+  "version": "0.1.0",
+  "description": "Desktop shell for the PltEdit Streamlit editor",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^36.3.2",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "org.vforiel.pltedit",
+    "productName": "PltEdit",
+    "files": ["main.js", "preload.js", "backend.py", "renderer/**"],
+    "win": { "target": "nsis", "signAndEditExecutable": false },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
